@@ -1,0 +1,55 @@
+# --> check the technical writing for various characteristics
+- writing/reflection.md:
+  - description: Ensure that reflection.md file exists in the writing/ directory
+    check: ConfirmFileExists
+  - description: Add your name to writing/reflection.md, then delete the 'Add your name here' placeholder 
+    check: MatchFileFragment
+    options:
+      fragment: "Add Your Name Here"
+      count: 0
+      exact: true
+  - description: Ensure no TODO items remain in the reflection
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+
+# --> check Tutorial 1 files exist and are complete
+- ./src/tutorial_01_interactive_streamlit/interactive_app.py:
+  - description: Ensure that interactive_app.py file exists
+    check: ConfirmFileExists
+  - description: Ensure no TODO items remain in interactive_app.py
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+
+# --> check Tutorial 2 files exist and are complete
+- ./src/tutorial_02_data_visualization/data_dashboard.py:
+  - description: Ensure that data_dashboard.py file exists
+    check: ConfirmFileExists
+  - description: Ensure no TODO items remain in data_dashboard.py
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+
+# --> check Tutorial 3 files exist and are complete
+- ./src/tutorial_03_text_analysis/text_analyzer.py:
+  - description: Ensure that text_analyzer.py file exists
+    check: ConfirmFileExists
+  - description: Ensure no TODO items remain in text_analyzer.py
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+
+# count number of commits in the GitHub repository
+- description: Have at least a specific minimum number of commits (5) in repository
+  check: CountCommits
+  options:
+    count: 5
